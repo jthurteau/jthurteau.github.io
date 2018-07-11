@@ -1,0 +1,23 @@
+body {font-family:sans-serif;background-color:#fff;color:#222;margin:0;font-size:0.9rem;}
+.serif {font-family:serif;}
+.centered {margin-left:auto;margin-right:auto;text-align:center;}
+.pageMargin {margin-left:2rem;margin-right:2rem;}
+.frameMargin {margin-left:2rem;margin-right:2rem;}
+.black {color:#eee;background-color:#111;}
+.offWhite{background-color:#fffaee;}
+.banner {text-align:center; padding:0.5rem;}
+.allCap {}
+.clear {clear:both;}
+.topMargin {margin-top:1rem;}
+.doubleTopMargin {margin-top:2rem;}
+.topPadding {padding-top:1rem;}
+.padding {padding:1rem;}
+.bottomPadding {padding-bottom:1rem;}
+hr {margin:0;}
+.fullWidthImagePlaceholder, .thirdWidthImagePlaceHolder{min-width:80%;max-width:90%;min-height:3rem;border:1px solid #000;}
+.thirdWidth, .thirdWidthForMed{float:left; width:33%;}
+.halfWidth, .halfWidthForMed{float:left; width:50%;}
+.hrCentered span {padding-left:1rem;padding-right:1rem;background-color:#fff;}
+.hrCentered {margin-top:-1rem;}
+.nonList {list-style:none; padding-left:0;}
+.toggle{height:3px;width:3px;overflow:hide;}
