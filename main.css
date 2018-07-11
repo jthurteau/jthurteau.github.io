@@ -21,3 +21,4 @@ hr {margin:0;}
 .hrCentered {margin-top:-1rem;}
 .nonList {list-style:none; padding-left:0;}
 .toggle{height:3px;width:3px;overflow:hide;}
+.toggle a {height:100%;width:100%; display:block;}
