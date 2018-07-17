@@ -2,6 +2,20 @@
 <head>
 <link rel="stylesheet" href="/main.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	var foo = 'bar';
+	$.ajax({
+		'url' : 'https://rooms.lib.ncsu.edu/api/rooms',
+		'success' : function(data,status,x) {
+			foo = 'yay';
+		},
+		'error' : function(x,status,error) {
+			foo = 'bad';
+		}
+		
+	});
+	var foo2 = 'bar';
+</script>
 </head>
 <body>
 <div class="padding">
