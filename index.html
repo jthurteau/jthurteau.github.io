@@ -4,9 +4,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 	var foo = 'bar';
-	var host = '';
-/*	$.ajax({
-		'url' : '',
+	var host = 'https://reserves-dev01.lib.ncsu.edu/json/';
+	$.ajax({
+		'url' : host + '',
+		'accept' : 'application/json',
 		'success' : function(data,status,x) {
 			foo = 'yay';
 		},
@@ -14,7 +15,7 @@
 			foo = 'bad';
 		}
 		
-	});*/
+	});
 	var foo2 = 'bar';
 </script>
 </head>
