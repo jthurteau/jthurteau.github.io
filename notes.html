@@ -1,0 +1,185 @@
+<html>
+<head>
+<link rel="stylesheet" href="/main.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</script>
+</head>
+<body>
+<div class="padding">
+
+<h1>Notes</h1>
+<p>Things I use a lot…</p>
+
+<h2>Setup</h2>
+<p>sudo apt-get install apache2</p>
+<ul>
+<li>… php</li>
+<li>… kiki</li>
+<li>… eclipse</li>
+<li>… chromium</li>
+<li>… mysql-workbench</li>
+<li>… mysql-server</li>
+<li>… php-mysql</li>
+<li>… php-ldap</li>
+<li>… php-curl</li>
+<li>… git</li>
+</ul>
+<h2>PHP</h2>
+<div class="preftext">ini_set(‘display_errors’, ‘On’);
+error_reporting(E_ALL); 
+
+scl enable rh-php56 bash
+
+<h2>Apache Management</h2>
+apachectl configtest
+
+apachectl graceful (not on RHEL)
+
+systemctl start httpd.service
+
+systemctl stop httpd.service
+
+systemctl restart httpd.service
+
+sysv-rc-conf
+
+sudo service httpd reload
+</div>
+<h2>SVN</h2>
+<div class="preftext">
+svn import localfolder svn+ssh://remotefolder -m “initial commit from local to create”
+
+svn co svn+ssh://remote  local
+
+svn up .
+
+svn export —force svn+ssh://remote local (export with no svn meta)
+
+svn -u st
+
+svn switch —relocate oldpath newpath
+
+svn+ssh://code.lib.ncsu.edu/syndetics-tools/trunk
+
+<h2>Git</h2>
+ls -al ~/.ssh
+
+(if any id_*.pub files, use that, otherwise…)
+
+ssh-keygen -t rsa -b 4096 -C “your_email@example.com”
+
+(creates folder and uses id_rsa.pub by default)
+
+eval $(ssh-agent -s)
+
+ssh-add ~/.ssh/id_rsa
+
+copy the entry from id_rsa.pub to a deploy key in the project (mind the white space)
+
+ssh -T git@github.com
+
+git config –global user.name “name”
+
+git config –global user.email e@mail
+
+git config –global core.editor nano
+</div>
+<h2>Puppet</h2>
+<div class="preftext">
+puppet agent -t –noop
+
+puppet agent -t 
+
+puppet agent –disable “reason”
+
+puppet agent –enable
+
+cat $(puppet config print vardir)/state/agent_disabled.lock
+</div>
+<h2>Unixy</h2>
+<div class="preftext">
+ln -s /target ./link
+
+export EDITOR=`which nano`
+
+sshfs $USER@hostname:/path/ /mountfolder/
+
+fusermount -u path
+
+alt f2 xkill
+
+ssh-keygen -R hostname
+
+/etc/ssh/ssh_config add ServerAliveInterval 60
+
+ssh-copy-id -i [keypath] -p [port] [host]
+</div>
+<h2>Nano</h2>
+<div class="preftext">
+Alt+/ to skip to end
+</div>
+<h2>Virtual Box</h2>
+<div class="preftext">
+VBoxManage modifyvm “VM name” —natpf1 “rulename,tcp„listenport„forwardtoport”
+
+VBoxManage modifyvm “VM name” —natpf1 delete “rulename”
+</div>
+<h2>Emoticons</h2>
+<div class="preftext">
+¯\_(ツ)_/¯
+
+t_(ツ)_ƒ
+
+‎(ƒ ;..;)ƒ
+
+ʕ •ᴥ•ʔ
+
+ಲ_ಲ
+
+ಥ_ಥ
+
+ಠ_ಠ
+
+╭∩╮（︶︿︶）╭∩╮
+
+●﹏● 
+
+(¤﹏¤) 
+
+(・＿・)
+
+(Θ︹Θ)
+
+( .. )
+
+(´. _ .`)
+
+● ﹏☉
+
+(´･_･`)
+</div>
+<h2>MySQL</h2>
+<div class="preftext">
+SELECT @rank:=@rank+1 AS rank, id, whatever FROM table AS t, (SELECT
+
+@rank:=0) AS r; 
+</div>
+<h2>MsSQL</h2>
+<div>
+SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE=‘BASE TABLE’
+
+SELECT * FROM [schema].INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = N'tableName’
+</div>
+<h2>PSQL</h2>
+<div class="preftext">
+\l (list all schema)
+
+\d (list all user’s tables)
+</div>
+<h2>Mac</h2>
+<p>defaults write com.apple.finder AppleShowAllFiles YES</p>
+
+</div>
+</body>
+</html>
