@@ -1,0 +1,68 @@
+/* saf styles */
+.accessibleHidden{
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+/* new styles */
+.debug_expandable {
+  height: 34px; 
+  width:42px; 
+  overflow:hidden;
+  transition-duration: 1s;
+  &:hover, &:focus {
+    height: 44px; 
+    width:52px;
+    transition-duration: 1s;
+  }
+}
+
+.toolbag-toggle{
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  z-index: 99999;
+  a {
+    color: #000;
+    font-size: 32px;
+    opacity: 0.25;
+  }
+}
+
+#candy {
+  top: 10px;
+  right: 10px;
+}
+
+.toolbag-panel {
+  display:none; 
+  padding:1em;
+  &.active {
+    display:block;
+  }
+  ul {
+    padding-left: 0.75em;
+    li {
+      padding-left: 0.25em;
+    }
+  }
+}
+
+.panel-abs {position: absolute;top:0;z-index: 9000000;}
+.panel-solid {background-color:#fff;}
+
+/*ruby styles*/
+.debug_dump{
+  display: block;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857;
+  color: #333;
+}
