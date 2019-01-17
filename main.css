@@ -16,19 +16,23 @@ a {
     text-decoration-color: #ddddff;
     color: #0000dd;
     transition-duration:1s;
+    transition-property: color,text-decoration-color;
 }
 a:hover, a:focus {
   text-decoration-color: #0000dd; 
   transition-duration:1s;
+  transition-property: color,text-decoration-color;
 }
 a:visited {
     text-decoration-color: #faddfa;
     color: #990099;
     transition-duration:1s;
+    transition-property: color,text-decoration-color;
 }
 a:visited:hover, a:visited:focus {
   text-decoration-color: #990099; 
   transition-duration:1s;
+  transition-property: color,text-decoration-color;
 }
 .accessibleHidden{
   position: absolute;
