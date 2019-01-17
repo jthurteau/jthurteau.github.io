@@ -46,7 +46,7 @@ a:visited:hover, a:visited:focus {
 .topMargin {margin-top:1rem;}
 .doubleTopMargin {margin-top:2rem;}
 .noBottomMargin {margin-bottom:0;}
-.noTopMargin {margin-bottom:0;}
+.noTopMargin {margin-top:0;}
 .topPadding {padding-top:1rem;}
 .padding {padding:1rem;}
 .bottomPadding {padding-bottom:1rem;}
