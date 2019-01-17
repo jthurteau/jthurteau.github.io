@@ -5,6 +5,8 @@ body {
   margin: 0;
   font-size: 0.9rem;
 }
+h1 {font-size:3rem;}
+.larger {font-size:2rem;}
 .serif {
   font-family: 'Aleo', serif;
 }
