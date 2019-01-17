@@ -63,6 +63,12 @@ hr {margin:0;}
   position: absolute;
 }
 .toggle-right {right: 50px;}
-.toggle a {height:100%;width:100%; display:block;}
+.toggle a {
+  height:100%;
+  width:100%;
+  display:block;
+  top: -1em;
+  position: relative;
+}
 .preftext {white-space: pre;}
 .light {font-weight:lighter;}
