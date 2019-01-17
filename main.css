@@ -35,4 +35,4 @@ hr {margin:0;}
 .toggle{height:3px;width:3px;overflow:hidden;background-color:#eee;}
 .toggle a {height:100%;width:100%; display:block;}
 .preftext {white-space: pre;}
-.light {font-weight:light;}
+.light {font-weight:lighter;}
