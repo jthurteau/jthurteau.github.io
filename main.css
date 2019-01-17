@@ -22,7 +22,7 @@ a:hover, a:focus {
   transition-duration:1s;
 }
 a:visited {
-    text-decoration-color: #eeaaee;
+    text-decoration-color: #faddfa;
     color: #990099;
     transition-duration:1s;
 }
