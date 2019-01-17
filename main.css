@@ -1,5 +1,13 @@
-body {font-family:sans-serif;background-color:#fff;color:#222;margin:0;font-size:0.9rem;}
-.serif {font-family:serif;}
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #fff;
+  color: #222;
+  margin: 0;
+  font-size: 0.9rem;
+}
+.serif {
+  font-family: 'Aleo', serif;
+}
 .centered {margin-left:auto;margin-right:auto;text-align:center;}
 .pageMargin {margin-left:2rem;margin-right:2rem;}
 .frameMargin {margin-left:2rem;margin-right:2rem;}
