@@ -11,6 +11,8 @@ h1 {font-size:3rem;}
 .serif {
   font-family: 'Aleo', serif;
 }
+a {text-decoration-opacity: 0.5;}
+a:hover, a:focus {text-decoration-opacity: 1; transition-duration:1s;}
 .centered {margin-left:auto;margin-right:auto;text-align:center;}
 .pageMargin {margin-left:2rem;margin-right:2rem;}
 .frameMargin {margin-left:2rem;margin-right:2rem;}
