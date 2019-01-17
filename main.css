@@ -4,6 +4,7 @@ body {
   color: #222;
   margin: 0;
   font-size: 0.9rem;
+  padding-left: 2rem;
 }
 h1 {font-size:3rem;}
 .larger {font-size:2rem;}
