@@ -55,7 +55,14 @@ hr {margin:0;}
 .hrCentered span {padding-left:1rem;padding-right:1rem;background-color:#fff;}
 .hrCentered {margin-top:-1rem;}
 .nonList {list-style:none; padding-left:0;}
-.toggle{height:3px;width:3px;overflow:hidden;background-color:#eee;}
+.toggle{
+  height:3px;
+  width:3px;
+  background-color:#eee;
+  overflow: visible;
+  position: absolute;
+}
+.toggle-right {right: 50px;}
 .toggle a {height:100%;width:100%; display:block;}
 .preftext {white-space: pre;}
 .light {font-weight:lighter;}
