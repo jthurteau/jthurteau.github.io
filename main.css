@@ -58,7 +58,6 @@ hr {margin:0;}
 .toggle{
   height:3px;
   width:3px;
-  background-color:#eee;
   overflow: visible;
   position: absolute;
 }
@@ -69,6 +68,8 @@ hr {margin:0;}
   display:block;
   top: -1em;
   position: relative;
+  color:#fafafa;
 }
+.toggle a:hover, .toggle a:focus {color:#ccc;}
 .preftext {white-space: pre;}
 .light {font-weight:lighter;}
