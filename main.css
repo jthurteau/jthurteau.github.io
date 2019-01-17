@@ -8,6 +8,7 @@ body {
 }
 h1 {font-size:3rem;}
 .larger {font-size:2rem;}
+.smaller {font-size:0.7rem;}
 .serif {
   font-family: 'Aleo', serif;
 }
@@ -73,3 +74,4 @@ hr {margin:0;}
 .toggle a:hover, .toggle a:focus {color:#ccc;}
 .preftext {white-space: pre;}
 .light {font-weight:lighter;}
+form input, form submit {margin-bottom:0.5rem;}
