@@ -11,8 +11,24 @@ h1 {font-size:3rem;}
 .serif {
   font-family: 'Aleo', serif;
 }
-a {text-decoration-opacity: 0.5;}
-a:hover, a:focus {text-decoration-opacity: 1; transition-duration:1s;}
+a {
+    text-decoration-color: #ddddff;
+    color: #0000dd;
+    transition-duration:1s;
+}
+a:hover, a:focus {
+  text-decoration-color: #0000dd; 
+  transition-duration:1s;
+}
+a:visited {
+    text-decoration-color: #eeaaee;
+    color: #990099;
+    transition-duration:1s;
+}
+a:visited:hover, a:visited:focus {
+  text-decoration-color: #990099; 
+  transition-duration:1s;
+}
 .centered {margin-left:auto;margin-right:auto;text-align:center;}
 .pageMargin {margin-left:2rem;margin-right:2rem;}
 .frameMargin {margin-left:2rem;margin-right:2rem;}
