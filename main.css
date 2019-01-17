@@ -29,6 +29,11 @@ a:visited:hover, a:visited:focus {
   text-decoration-color: #990099; 
   transition-duration:1s;
 }
+.accessibleHidden{
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
 .centered {margin-left:auto;margin-right:auto;text-align:center;}
 .pageMargin {margin-left:2rem;margin-right:2rem;}
 .frameMargin {margin-left:2rem;margin-right:2rem;}
