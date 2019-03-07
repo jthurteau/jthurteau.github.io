@@ -82,3 +82,7 @@ hr {margin:0;}
 .light {font-weight:lighter;}
 form input, form submit {margin-bottom:0.5rem;}
 .sticky {position:sticky;}
+.top{top:0;}
+.bottom{bottom:0;}
+.topSpace{top:1rem;}
+.bottomSpace{bottom:1rem;}
