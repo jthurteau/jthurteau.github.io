@@ -6,17 +6,19 @@
 
 <body>
 
-<div style="padding:50% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/310781983?autoplay=0&color=ffffff" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<div style="padding:50% 0 0 0;position:relative;"><iframe id="f01" src="https://player.vimeo.com/video/310781983?autoplay=0&color=ffffff" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
   <script>
     $(function(){
       //$( "body" ).trigger({
       //  
       //});
-      var f = new KeyboardEvent('keydown',{'keyCode':85,'which':85});
-      document.dispatchEvent(f);
+      var f = new KeyboardEvent('keypress',{'code':85,'which':85});
+      $('body').trigger('keypress', f);
       setTimeout( function() {
-        var e = new KeyboardEvent('keydown',{'keyCode':32,'which':32});
-        document.dispatchEvent(e);
+        var e = new KeyboardEvent('keypress',{'code':32,'which':32});
+        //document.dispatchEvent(e);
+        var frame1 = $('#f01');
+        frame1.trigger('keypress', e);
       } , 1000);
       
     });
