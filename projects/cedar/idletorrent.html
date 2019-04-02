@@ -14,6 +14,24 @@
       //});
       var f = new KeyboardEvent('keypress',{'code':85,'which':85});
       $('body').trigger('keypress', f);
+      
+      var el = document.documentElement
+      , rfs = // for newer Webkit and Firefox
+             el.requestFullScreen
+          || el.webkitRequestFullScreen
+          || el.mozRequestFullScreen
+          || el.msRequestFullScreen
+      ;
+      if(typeof rfs!="undefined" && rfs){
+        rfs.call(el);
+      } else if(typeof window.ActiveXObject!="undefined"){
+        // for Internet Explorer
+        var wscript = new ActiveXObject("WScript.Shell");
+        if (wscript!=null) {
+           wscript.SendKeys("{F11}");
+        }
+      }
+      
       setTimeout( function() {
         var e = new KeyboardEvent('keypress',{'code':32,'which':32});
         //document.dispatchEvent(e);
