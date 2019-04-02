@@ -13,7 +13,11 @@
       //  
       //});
       var f = new KeyboardEvent('keydown',{'keyCode':85,'which':85});
-      setTimeout( function() {var e = new KeyboardEvent('keydown',{'keyCode':32,'which':32});} , 1000);
+      document.dispatchEvent(f);
+      setTimeout( function() {
+        var e = new KeyboardEvent('keydown',{'keyCode':32,'which':32});
+        document.dispatchEvent(e);
+      } , 1000);
       
     });
   </script>
