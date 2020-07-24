@@ -86,3 +86,5 @@ form input, form submit {margin-bottom:0.5rem;}
 .bottom{bottom:0;}
 .topSpace{top:1rem;}
 .bottomSpace{bottom:1rem;}
+ul.horz{display:block;}
+ul.horz li{display:inline-block;}
