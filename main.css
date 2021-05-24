@@ -45,7 +45,7 @@ a:visited:hover, a:visited:focus {
 .black {color:#eee;background-color:#111;}
 .offWhite{background-color:#fffaee;}
 .banner {text-align:center; padding:0.5rem;}
-.allCap {}
+/*.allCap {}*/
 .clear {clear:both;}
 .topMargin {margin-top:1rem;}
 .doubleTopMargin {margin-top:2rem;}
@@ -55,10 +55,15 @@ a:visited:hover, a:visited:focus {
 .padding {padding:1rem;}
 .bottomPadding {padding-bottom:1rem;}
 hr {margin:0;}
-.fullWidthImagePlaceholder, .thirdWidthImagePlaceHolder{min-width:80%;max-width:90%;min-height:3rem;border:1px solid #000;}
-.thirdWidth, .thirdWidthForMed{float:left; width:33%;}
-.twoThirdWidth, .twoThirdWidthForMed{float:left; width:66%;}
-.halfWidth, .halfWidthForMed{float:left; width:50%;}
+
+.fullWidthImagePlaceholder, .thirdWidthImagePlaceHolder {min-width:80%;max-width:90%;min-height:3rem;border:1px solid #000;}
+.fifthWidth, .fifthWidthForMed {float: left; width: 20%;}
+.twofifthWidth, .twofifthWidthForMed {float: left; width: 40%;}
+.thirdWidth, .thirdWidthForMed {float:left; width:33%;}
+.twoThirdWidth, .twoThirdWidthForMed {float:left; width:66%;}
+.halfWidth, .halfWidthForMed {float:left; width:50%;}
+
+
 .hrCentered span {padding-left:1rem;padding-right:1rem;background-color:#fff;}
 .hrCentered {margin-top:-1rem;}
 .nonList {list-style:none; padding-left:0;}
