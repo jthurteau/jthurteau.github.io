@@ -14,7 +14,7 @@ ms_config = {
     ['reconfigure', 're'],
     'logs',
     'list',
-    'start',
+    ['start', [app_name]],
     'stop',
     'clean',
     ['container', 'dev-cont', [app_name]],
@@ -24,7 +24,6 @@ ms_config = {
     ['updates', 'up'],
     ['auto-container', 'dev-cont', [app_name]],
     #['link-static', 'static']
-    'start',
   ]
 }
 

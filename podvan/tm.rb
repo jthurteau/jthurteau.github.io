@@ -155,7 +155,7 @@ module Tm
       return if !params || !params.is_a?(Array) || params.length < 1
       name = params[0]
       file_base = params.length > 1 && params[1].is_a?(String) ? params[1]: name
-      arg_short = params.length > 1 && params[1].class.include?(Enumerable) ? params[1] : false
+      arg_short = params.length > 1 && params[1].class.include?(Enumerable) ? 1 : false
       arg_index = params.length > 2 ? 2 : arg_short
       args = arg_index ? params[arg_index] : [@my_secret]
       file = "#{file_base}.sh"
