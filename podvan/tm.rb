@@ -29,7 +29,7 @@ module Tm
 
     ##
     # storage for the local secret
-    @secret_file = 'local-dev.secret.txt'
+    @secret_file = 'secret.txt'
 
     ##
     # local secret
@@ -46,6 +46,10 @@ module Tm
     ##
     # project name
     @project = 'dev-container'
+
+    ##
+    # path to store temp/local project files between environments
+    @project_path = nil
 
     ##
     # vm name
@@ -73,9 +77,12 @@ module Tm
 
     def self.init(config)
       self._config(config)
-      @my_secret = TmUtils::assert_secret(@secret_file, @secret_length, @secret_set)
+      @project_path = "#{@local_token}#{@project}"
+      secret_path = "#{@my_path}/#{@project_path}/#{@secret_file}"
+      TmUtils::assert_path("#{@my_path}/#{@project_path}")
+      @my_secret = TmUtils::assert_secret(secret_path, @secret_length, @secret_set)
       @vm_name = TmUtils::name_safe(TmUtils::sub(@vm_name,self._vars()))
-      TmUtils::trace(@vm_name)
+      #TmUtils::trace(@vm_name)
       TmUtils::assert_config_files(@config_files, @config_path, @sample_token)
     end
   
@@ -85,8 +92,8 @@ module Tm
 
     def self.provision(p, vm)
       p.name = @vm_name
-      @auto.each() {|a| self._add_provisioners(vm, a, 'once')}
-      @manual.each() {|m| self._add_provisioners(vm, m)}
+      TmUtils::bind(@auto, self._vars).each() {|a| self._add(vm, a, 'once')}
+      TmUtils::bind(@manual, self._vars).each() {|m| self._add(vm, m)}
     end
 
     def self.path()
@@ -103,14 +110,16 @@ module Tm
     end
 
     def self._vars()
-      {
-        'project': @project
+      { #NOTE to support :vars binding, longer strings have to precede shorter matches
+        'project_path': @project_path,
+        'project': @project,
+        'secret': @my_secret,
       }
     end
 
     def self._set(key, value, vars = [])
       case key
-      when :app_name
+      when :project
         @project = TmUtils::name_safe(value)
       when :manual_provisioners
         @manual = value
@@ -141,7 +150,7 @@ module Tm
       end
     end
 
-    def self._add_provisioners(vm, params, run_when = 'never')
+    def self._add(vm, params, run_when = 'never')
       params = [params] if params.is_a?(String) && params.length > 0
       return if !params || !params.is_a?(Array) || params.length < 1
       name = params[0]

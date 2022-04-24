@@ -13,6 +13,27 @@ module TmUtils
   # 
   @features = {verbose: true, debug: true}
 
+  def self.assert_path(path)
+    path_components = path ? path.split('/') : []
+    confirmed_path = ''
+    path_components.each do |p|
+      current_path = "#{confirmed_path}/#{p}"
+      initial_skip = '' == confirmed_path && current_path.end_with?(':')
+      if (!initial_skip && !File.directory?(current_path))
+        if (self.may_write?(current_path))
+          self.say("attempting to create directory #{p} in #{confirmed_path}")
+          Dir.mkdir(current_path, 0755)
+          confirmed_path += initial_skip ? p : "/#{p}"
+        else
+          self.shutdown("unable to create directory #{p} in #{confirmed_path}\n", -1)
+        end
+      else
+        confirmed_path += initial_skip ? p : "/#{p}"
+      end
+    end
+    return confirmed_path
+  end
+
   def self.assert_secret(file, length = 16, set = '')
     secret = ''
     if !File.exist?(file)
@@ -43,9 +64,21 @@ module TmUtils
     f
   end
 
-  def self.sub(s,v)
-    v.each() {|k,r| s = s.sub("[#{k}]", r)}
-    s
+  def self.sub(s,v,mode = :bracket) #other mode is :vars
+    n = s.clone() 
+    v.each() {|k,r| n = n.sub(mode == :bracket ? "[#{k}]" : "@#{k}", r) if n.is_a?(String)}
+    n
+  end
+
+  def self.bind(v1, v2)
+    #self.trace([v1, v2])
+    return v1.map() {|v| self.bind(v, v2)} if v1.is_a?(Array)
+    if v1.is_a?(Hash)
+      v3 = v1.clone()
+      v3.each() {|k, v| v3[k] = self.bind(v, v2)}
+      return v3
+    end
+    self.sub(v1, v2, :vars)
   end
 
   def self.gen_trace(local = true)
@@ -116,6 +149,11 @@ module TmUtils
       self.say(self.gen_trace(), :now, 2)
     end
     exit e.is_a?(Integer) ? e.abs : e
+  end
+
+  def self.may_write?(path, whole_project = false)
+    allowed_path = whole_project ? File.dirname(Tm::path()) : Tm::path() #TODO this is not accurate for external provisoners
+    path.start_with?(allowed_path) #TODO prevent hijinx by filtering traversal
   end
   
 end

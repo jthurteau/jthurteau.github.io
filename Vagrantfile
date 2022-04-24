@@ -9,20 +9,22 @@ raise 'Unable to build LDE. Vagrant container tools unavailable.' if !defined?(T
 # use it for Ubuntu or Alpine/Podman setups
 app_name = 'test'
 ms_config = {
-  app_name: app_name,
+  project: app_name,
   manual_provisioners: [ #[name, file, [script, params]]
     ['reconfigure', 're'],
     'logs',
+    'list',
     'start',
     'stop',
     'clean',
-    ['container', 'dev-cont'],
+    ['container', 'dev-cont', [app_name]],
   ],
   auto_provisioners: [
-    ['dependencies', 'dep'],
+    ['dependencies', 'dep', ['@project_path']],
     ['updates', 'up'],
-    ['container', 'dev-cont', [app_name]],
-    ['link-static', 'static']
+    ['auto-container', 'dev-cont', [app_name]],
+    #['link-static', 'static']
+    'start',
   ]
 }
 
