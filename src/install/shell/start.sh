@@ -1,0 +1,1 @@
+podman run -d -p 8090:9000 php-fpm

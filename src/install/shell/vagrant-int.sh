@@ -1,0 +1,1 @@
+podman run -it php-fpm /bin/sh
