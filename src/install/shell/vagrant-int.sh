@@ -1,1 +1,1 @@
-podman run -it php-fpm /bin/sh
+podman run -it --mount type=bind,src=/vagrant,dst=/opt/application/$1,ro=true --mount type=bind,src=/opt/project,dst=/opt/project php-fpm /bin/sh

@@ -1,1 +1,1 @@
-podman run -d -p 8090:9000 php-fpm
+podman run -d -p 8090:9000 --mount type=bind,src=/vagrant,dst=/opt/application/$1,ro=true --mount type=bind,src=/opt/project,dst=/opt/project php-fpm
