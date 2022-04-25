@@ -1,5 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
+# LICENSE & DISCLAIMERS https://github.com/jthurteau/jthurteau.github.io/
 
 require_relative 'podvan/tm' if !defined?(Tm) && File.exist?('podvan/tm.rb')
 raise 'Unable to build LDE. Vagrant Pod VM tools unavailable.' if !defined?(Tm)

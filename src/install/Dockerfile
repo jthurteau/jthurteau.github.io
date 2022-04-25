@@ -1,7 +1,7 @@
-#
-# PHP8 FPM Dockerfile
-# for ncsulibraries - jthurtea
+##
+# PHP8 FPM Dockerfile - jthurtea
 # development container that mounts the repo
+# LICENSE & DISCLAIMERS https://github.com/jthurteau/jthurteau.github.io/
 
 FROM php:fpm-alpine3.15 as builder
 ARG PRIMARY_APPLICATION
