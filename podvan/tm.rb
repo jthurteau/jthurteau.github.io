@@ -1,5 +1,5 @@
 ## 
-# Helps Manage Environment Replication for Vagrant VM Hosted Containers
+# Helps Manage Environment Replication in a Vagrant Pod VM
 # https://podman.readthedocs.io/
 # https://www.vagrantup.com/docs/
 #
@@ -8,6 +8,9 @@
 # aside from the runtime built into Vagrant
 # see ../Vagrantfile for how this module is used
 #
+# Based on earlier work on Mr https://github.com/jthurteau/mr
+# Copyright 2022 Troy Hurteau Under GPL-3.0 License
+# https://github.com/jthurteau/jthurteau.github.io/blob/main/COPYRIGHT
 
 module Tm
     extend self

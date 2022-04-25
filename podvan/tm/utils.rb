@@ -1,6 +1,7 @@
 ## 
 # Util functions for Tm
-#
+# Copyright 2022 Troy Hurteau Under GPL-3.0 License
+# https://github.com/jthurteau/jthurteau.github.io/blob/main/COPYRIGHT
 
 module TmUtils
   extend self

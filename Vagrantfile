@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 require_relative 'podvan/tm' if !defined?(Tm) && File.exist?('podvan/tm.rb')
-raise 'Unable to build LDE. Vagrant container tools unavailable.' if !defined?(Tm)
+raise 'Unable to build LDE. Vagrant Pod VM tools unavailable.' if !defined?(Tm)
 
 ##
 # this lighter sandbox build can replace Vagrantfile for public distributions
@@ -16,9 +16,9 @@ ms_config = {
     ['reconfigure', 're'],
     'logs',
     'list',
-    ['start', [app_name]],
     'stop',
     'clean',
+    ['start', [app_name]],
     ['container', 'dev-cont', [app_name]],
   ],
   auto_provisioners: [
