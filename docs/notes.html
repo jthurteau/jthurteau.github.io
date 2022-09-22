@@ -127,13 +127,6 @@ cat /etc/redhat-release
 VBoxManage modifyvm “VM name” —natpf1 delete “rulename”
 </div>
 
-<h2>pg</h2>
-<div class="reftext">
-psql --username=<i>user</i> --password --host=localhost
-/c <schema>
-/dt
-COPY table TO '/tmp/<i>file</i>.csv' DELIMITER ',' CSV HEADER;
-</div>
 <h2>Emoticons</h2>
 <div class="preftext">¯\_(ツ)_/¯
 
@@ -182,8 +175,12 @@ SELECT * FROM [schema].INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = N'tableName
 </div>
   
 <h2>PSQL</h2>
-<div class="preftext">\l (list all schema)
-
+<div class="preftext">
+psql --username=<i>user</i> --password --host=localhost
+\l (list all schema)
+\c <schema>
+\dt (list tables)
+COPY table TO '/tmp/<i>file</i>.csv' DELIMITER ',' CSV HEADER;
 \d (list all user’s tables)
 </div>
   
