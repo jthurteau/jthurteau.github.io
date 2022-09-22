@@ -177,11 +177,17 @@ SELECT * FROM [schema].INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = N'tableName
 <h2>PSQL</h2>
 <div class="preftext">
 psql --username=<i>user</i> --password --host=localhost
+  
 \l (list all schema)
+  
 \c <schema>
+  
 \dt (list tables)
+  
 COPY table TO '/tmp/<i>file</i>.csv' DELIMITER ',' CSV HEADER;
+  
 \d (list all user’s tables)
+  
 </div>
   
 <h2>Mac</h2>
