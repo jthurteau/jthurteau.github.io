@@ -99,6 +99,9 @@ fusermount -u path
 alt f2 xkill
 
 ssh-keygen -R hostname
+(removes known hosts fingerprints)
+  
+ssh-keygen -o -a 100 ed25519.
 
 /etc/ssh/ssh_config add ServerAliveInterval 60
 
