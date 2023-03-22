@@ -53,7 +53,8 @@ sudo service httpd reload
 
 (if any id_*.pub files, use that, otherwise…)
 
-ssh-keygen -t rsa -b 4096 -C “your_email@example.com”
+//ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+ssh-keygen -o -a 100 ed25519 -C "your_email@example.com"
 
 (creates folder and uses id_rsa.pub by default)
 
@@ -100,8 +101,6 @@ alt f2 xkill
 
 ssh-keygen -R hostname
 (removes known hosts fingerprints)
-  
-ssh-keygen -o -a 100 ed25519.
 
 /etc/ssh/ssh_config add ServerAliveInterval 60
 
