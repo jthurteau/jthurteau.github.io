@@ -8,6 +8,7 @@ ARG PRIMARY_APPLICATION
 ENV PRIMARY_APPLICATION=${PRIMARY_APPLICATION}
 ##
 # deploy option 2
+  # TODO https://stackoverflow.com/questions/43654656/dockerfile-if-else-condition-with-external-arguments
 VOLUME ["/opt/application/${PRIMARY_APPLICATION}"]
 VOLUME ["/opt/project"]
 RUN mkdir /var/www/application \
@@ -25,7 +26,9 @@ RUN mkdir /var/www/application \
 # Docker no likey cloning into /opt/application/vendor in the same RUN that created it...
 RUN git clone https://github.com/jthurteau/saf.git /opt/application/vendor/saf \
   && mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini" \
-  && rm /usr/local/etc/php-fpm.d/docker.conf
+  && rm /usr/local/etc/php-fpm.d/docker.conf \
+  && mkdir /opt/phpcs \
+  && curl -L https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar -o /opt/phpcs/phpcs.phar
 COPY php-fpm/debug.conf /usr/local/etc/php-fpm.d/docker-local.conf
 
 WORKDIR /var/www/html

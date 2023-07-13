@@ -77,13 +77,13 @@ git checkout --track origin/branch
 </div>
   
 <h2>Puppet</h2>
-<div class="preftext">puppet agent -t –noop
+<div class="preftext">puppet agent -t --noop
 
 puppet agent -t 
 
-puppet agent –disable “reason”
+puppet agent --disable "reason"
 
-puppet agent –enable
+puppet agent --enable
 
 cat $(puppet config print vardir)/state/agent_disabled.lock
 </div>
